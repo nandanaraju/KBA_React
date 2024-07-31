@@ -10,7 +10,7 @@ function App() {
     <Route path='/'element={<MainLayout/>}>
       <Route path='/' element={<IndexPage />} />
       <Route path='/issue' element={<IssuePage/>}/>
-      <Route path='/view' element={<ViewPage/>}/>
+      <Route path='/view/:id' element={<ViewPage/>}/>
       
       </Route>
 

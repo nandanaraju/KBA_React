@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import img1 from '../assets/images/photo.jpg'
 
 const IndexPage = () => {
+    const [id,setId]=useState('')
     return (
         <>
         <form>
@@ -20,9 +21,9 @@ const IndexPage = () => {
             <img src={img1} className="size-60 mx-auto mt-12 mb-10"/>
         </div>
         <div className="text-center">
-            <input type="text" name="txtame" required placeholder="Enter Certificate Id to view " className="border-2 border-sky-400"/>
+            <input type="text" name="textname" required placeholder="Enter Certificate Id to view " className="border-2 border-sky-400" value={id} onChange={(e)=>setId(e.target.value)}/>
             {/* <input type="button" value="Search" className="text-white bg-blue-500 w-20 size-10"/> */}
-            <Link to="/view"><input type="button" name="search" value="Search"
+            <Link to={`/view/${id}`}><input type="button" name="search" value="Search"
                         className="text-white bg-blue-500 w-20 size-10"/></Link>
         </div>
 
